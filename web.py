@@ -33,3 +33,22 @@ class RequestHandler:
     def set_header(self, key, value):
 
         self.header[key] = value
+
+    def get_method(self):
+        if self.request is not None:
+
+            method = self.request[0].split(' ')[0]
+            return method
+        else:
+            raise
+
+    def get_file_request(self):
+        if self.request is not None:
+
+            request = self.request[0].split(' ')[1]
+            if request == '/':
+                return '/index.html'
+            else:
+                return request
+        else:
+            raise
