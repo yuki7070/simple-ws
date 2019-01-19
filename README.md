@@ -14,5 +14,6 @@ ws.onmessage = function () {}
 ```
 
 ## to do
+- 非同期処理
 - rtp
 - webrtc
