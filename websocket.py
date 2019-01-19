@@ -4,11 +4,11 @@ import base64
 import hashlib
 import logging
 from threading import Thread
-import asyncio
 import signal
 import sys
 from select import select
 import time
+from web import RequestHandler
 
 OPCODE_CONTINUATION = 0x0
 OPCODE_TEXT = 0x1
@@ -17,40 +17,6 @@ OPCODE_CLOSE = 0x8
 OPCODE_PING = 0x9
 OPCODE_PONG = 0xa
 MAGIC_GUID = "258EAFA5-E914-47DA-95CA-C5AB0DC85B11"
-
-class RequestHandler:
-
-    def __init__(self, request = None):
-
-        if request is not None:
-            self.request = request.split('\r\n\r\n')
-        self.header = {}
-        self.content = ''
-
-    def parser_header(self):
-
-        header = {}
-
-        for line in self.request[0].split('\r\n')[1:]:
-            row = line.split(': ')
-            header[row[0].lower()] = row[1]
-
-        self.header = header
-        return header
-
-    def build_header(self):
-
-        header = ''
-        for key in self.header:
-            header += key + ': ' + self.header[key] + '\r\n'
-
-        header += '\r\n'
-
-        return header
-
-    def set_header(self, key, value):
-
-        self.header[key] = value
 
 class WebSocket:
 
