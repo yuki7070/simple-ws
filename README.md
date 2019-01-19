@@ -3,6 +3,11 @@ python3でWebのプロトコルを実装する。勉強用
 - http
 - websocket
 
+## HTTP
+```
+$ python (or python3) http.py
+```
+
 ## WebSocket
 ```
 $ python (or python3) websocket.py
