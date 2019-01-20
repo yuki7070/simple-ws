@@ -81,7 +81,7 @@ class HttPServer:
 
     def __init__(self,
         bind = 'localhost',
-        port = 8088,
+        port = 8080,
         file_dir = './html'
     ):
         self.bind = bind
