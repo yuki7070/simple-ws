@@ -17,11 +17,6 @@ $ python (or python3) http.py
 ```
 $ python (or python3) websocket.py
 ```
-```
-ws = new WebSocket('ws://localhost:8000')
-ws.send('Hello, World')
-ws.onmessage = function () {}
-```
 ### 課題
 - 接続中のクライアント全員に送信することしかできていない
 
