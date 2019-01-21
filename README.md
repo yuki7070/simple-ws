@@ -7,6 +7,11 @@ python3でWebのプロトコルを実装する。勉強用
 ```
 $ python (or python3) http.py
 ```
+### 課題
+- jsonのresponse
+- そもそもめんどくさくてGETの処理しか作ってない
+- HTTP/2にも対応する
+- QUIQ
 
 ## WebSocket
 ```
@@ -17,6 +22,8 @@ ws = new WebSocket('ws://localhost:8000')
 ws.send('Hello, World')
 ws.onmessage = function () {}
 ```
+### 課題
+- 接続中のクライアント全員に送信することしかできていない
 
 ## to do
 - 非同期処理
