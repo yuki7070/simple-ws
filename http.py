@@ -68,6 +68,7 @@ class HTTPHandler:
         r.set_header('Date', date)
         r.set_header('Server', 'MyPythonWeb')
         r.set_header('Connection', 'close')
+        r.set_header('Alt-Svc', 'hq=":8080"')
 
         if status_code == 200:
             header = 'HTTP/1.1 200 OK\r\n'
